@@ -12,8 +12,8 @@ DATABASE_CONFIG = {
 # Configuración de la empresa
 COMPANY_CONFIG = {
     'razon_social': 'ELECTRICIDAD ***REMOVED***',
-    'cuit': '20-44551555-9',
-    'direccion': 'Ricardo Araujo 363',
+    'cuit': '***REMOVED***',
+    'direccion': 'Martin Gil 142',
     'localidad': '***REMOVED***',
     'provincia': 'Córdoba',
     'punto_venta': 1,
