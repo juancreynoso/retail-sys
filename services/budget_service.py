@@ -124,10 +124,10 @@ class BudgetService:
         """Información de la empresa - personalizable"""
         company_text = """
         <b>***REMOVED***</b><br/>
-        Dirección: Martín Gil 134<br/>
+        Dirección: ***REMOVED***<br/>
         Teléfono: ***REMOVED***<br/>
-        Email: nestorpalacios@gmail.com<br/>
-        CUIT: 20-12345678-9
+        Email: ***REMOVED***<br/>
+        CUIT: ***REMOVED***
         """
         return Paragraph(company_text, self.styles['CompanyInfo'])
     
