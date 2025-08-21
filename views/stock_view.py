@@ -114,6 +114,8 @@ class StockView:
 
         # Entries
         self.item_id_entry = tk.Entry(entries_frame, width=50, textvariable=self.item_id_var)
+        # Validación: al salir del campo de código, verificar si ya existe
+        self.item_id_entry.bind('<FocusOut>', self.check_existing_product)
         self.name_entry = tk.Entry(entries_frame, width=50, textvariable=self.name_var)
         self.brand_entry = tk.Entry(entries_frame, width=50, textvariable=self.brand_var)
         self.price_entry = tk.Entry(entries_frame, width=50, textvariable=self.price_var)
@@ -124,6 +126,26 @@ class StockView:
         iva = ['21%', '10.5%', '0%']
         self.iva_combo = ttk.Combobox(entries_frame, width=5, textvariable=self.iva_var, values=iva, state='readonly')
         self.iva_combo.grid(row=3, column=3, padx=5)
+
+        # Grid layout para entries
+        self.item_id_entry.grid(row=0, column=2, padx=5, pady=5)
+        self.name_entry.grid(row=1, column=2, padx=5, pady=5)
+        self.brand_entry.grid(row=2, column=2, padx=5, pady=5)
+        self.price_entry.grid(row=3, column=2, padx=5, pady=5)
+        self.price2_entry.grid(row=4, column=2, padx=5, pady=5)
+        self.quantity_entry.grid(row=5, column=2, padx=5, pady=5)
+        
+    def check_existing_product(self, event=None):
+        """Verifica si el producto con el código ingresado ya existe y muestra advertencia si es así."""
+        code = self.item_id_var.get().strip()
+        if not code:
+            return
+        existing = self.stock_model.get_product_by_id(code)
+        if existing:
+            self.show_warning(f"Ya existe un producto con el código {code}.")
+            self.clear_form()
+        else:
+            pass
 
         # Grid layout para entries
         self.item_id_entry.grid(row=0, column=2, padx=5, pady=5)
