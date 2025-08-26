@@ -58,7 +58,7 @@ class StockController:
         except ValueError as e:
             self.view.show_error(f"Error en los datos: {str(e)}")
         except Exception as e:
-            self.view.show_error(f"Error al registar producto: {str(e)}")
+            self.view.show_error(f"Error al registar producto: código en uso")
     
     def update_product(self):
         """Actualizar producto existente"""
