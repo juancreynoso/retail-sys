@@ -9,6 +9,9 @@ __pycache__/
 venv*/
 .env
 
+# Archivos de configuración con datos sensibles
+config/settings.py
+
 # Archivos del sistema
 .DS_Store
 
@@ -30,3 +33,13 @@ presupuestos/
 /arca/TA.xml
 /arca/TRA.xml
 /arca/TRA.tmp
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
