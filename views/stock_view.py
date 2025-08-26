@@ -147,14 +147,6 @@ class StockView:
         else:
             pass
 
-        # Grid layout para entries
-        self.item_id_entry.grid(row=0, column=2, padx=5, pady=5)
-        self.name_entry.grid(row=1, column=2, padx=5, pady=5)
-        self.brand_entry.grid(row=2, column=2, padx=5, pady=5)
-        self.price_entry.grid(row=3, column=2, padx=5, pady=5)
-        self.price2_entry.grid(row=4, column=2, padx=5, pady=5)
-        self.quantity_entry.grid(row=5, column=2, padx=5, pady=5)
-
     def create_tree_frame(self):
         """Crear frame para tabla de stock"""
         tree_frame = tk.Frame(self.frame)
