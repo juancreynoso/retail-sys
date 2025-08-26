@@ -1,4 +1,4 @@
-# Volta System
+# Retail System
 
 Stock management, sales, PDF quote generation, and invoicing system integrated with AFIP. Developed in Python with a Tkinter graphical interface.
 
