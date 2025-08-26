@@ -1,4 +1,4 @@
-# Stock Management System
+# Volta System
 
 Stock management, sales, PDF quote generation, and invoicing system integrated with AFIP. Developed in Python with a Tkinter graphical interface.
 
@@ -79,6 +79,6 @@ pyinstaller --noconfirm --onefile --windowed --add-data "db/stock.db;db" main.py
 
 ---
 
-## Autor
+## Author
 
 Juan Cruz Reynoso
