@@ -2,7 +2,6 @@ from datetime import datetime
 from models.sales import SalesModel
 from models.stock import StockModel
 from services.afip_service import AFIPService
-from invoice.sistema_facturacion import FacturaPDFGenerator
 from config.settings import COMPANY_CONFIG
 
 class InvoiceService:
@@ -10,7 +9,6 @@ class InvoiceService:
         self.sales_model = SalesModel()
         self.stock_model = StockModel()
         self.afip_service = AFIPService()
-        self.pdf_generator = FacturaPDFGenerator()
     
     def create_invoice(self, customer_data, products_data):
         """
