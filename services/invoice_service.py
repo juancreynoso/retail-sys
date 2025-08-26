@@ -3,6 +3,7 @@ from models.sales import SalesModel
 from models.stock import StockModel
 from services.afip_service import AFIPService
 from invoice.sistema_facturacion import FacturaPDFGenerator
+from config.settings import COMPANY_CONFIG
 
 class InvoiceService:
     def __init__(self):
@@ -149,11 +150,11 @@ class InvoiceService:
         """Generar PDF de la factura"""
         # Datos de la empresa (deberías moverlos a config)
         datos_empresa = {
-            'razon_social': 'ELECTRICIDAD JUAN S.A.',
-            'cuit': '20-44551555-9',
-            'direccion': 'Ricardo Araujo 363',
-            'localidad': '***REMOVED***',
-            'provincia': 'Córdoba',
+            'razon_social': {COMPANY_CONFIG['razon_social']},
+            'cuit': {COMPANY_CONFIG['cuit']},
+            'direccion': {COMPANY_CONFIG['direccion']},
+            'localidad': {COMPANY_CONFIG['localidad']},
+            'provincia': {COMPANY_CONFIG['provincia']},
             'punto_venta': 1,
             'numero': int(invoice_data['numero_factura'].split('-')[1])
         }

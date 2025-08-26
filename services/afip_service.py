@@ -24,7 +24,7 @@ class AFIPService:
                     'errores': []
                 }
             else:
-                # Aquí integrarías con tu wsfe.py real
+                # Aquí se integra con wsfe.py real
                 # from arca.wsfe import obtener_cae_real
                 # return obtener_cae_real(datos_factura)
                 pass
@@ -84,7 +84,7 @@ class AFIPService:
                 sales_model = SalesModel()
                 return sales_model.get_next_invoice_number()
             else:
-                # Aquí consultarías a AFIP el último número usado
+                # Aquí se consulta a AFIP el último número usado
                 # from arca.wsfe import obtener_ultimo_comprobante
                 # return obtener_ultimo_comprobante(punto_venta, tipo_comprobante) + 1
                 pass

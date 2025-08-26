@@ -4,6 +4,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
 from reportlab.lib.units import inch
 from datetime import datetime
+from config.settings import COMPANY_CONFIG
 import os
 
 class BudgetService:
@@ -110,12 +111,12 @@ class BudgetService:
         # Generar PDF
         doc.build(elements)
         return save_path
-    
+
     def _get_company_info(self):
-        """Información de la empresa - personalizable"""
-        company_text = """
-        <b>***REMOVED***</b><br/>
-        ***REMOVED*** | Tel: ***REMOVED*** | ***REMOVED*** | CUIT: ***REMOVED***
+        """Información de la empresa - desde configuración"""
+        company_text = f"""
+        <b>{COMPANY_CONFIG['razon_social']}</b><br/>
+        {COMPANY_CONFIG['direccion']} | Tel: {COMPANY_CONFIG['telefono']} | {COMPANY_CONFIG['email']} | CUIT: {COMPANY_CONFIG['cuit']}
         """
         return Paragraph(company_text, self.styles['CompanyInfo'])
     
